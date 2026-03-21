@@ -69,14 +69,7 @@ async def motivate(interaction: discord.Interaction) -> None:
         image_path = get_random_image_path(IMAGES_DIR)
         discord_file = discord.File(image_path, filename=image_path.name)
 
-        embed = discord.Embed(
-            title="Motivation Boost",
-            description="Here is a random motivational image for you.",
-            color=discord.Color.blurple(),
-        )
-        embed.set_image(url=f"attachment://{image_path.name}")
-
-        await interaction.followup.send(embed=embed, file=discord_file)
+        await interaction.followup.send(file=discord_file)
     except FileNotFoundError as exc:
         logger.warning("Unable to send motivation image: %s", exc)
         await interaction.followup.send(
