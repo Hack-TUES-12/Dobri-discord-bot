@@ -8,6 +8,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 
+# Dobri e gotin
 BASE_DIR = Path(__file__).parent
 IMAGES_DIR = BASE_DIR / "images"
 
